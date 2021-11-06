@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import PokemonList from './Component/PokemonList';
+import PokemonTable from './Component/PokemonTable';
+import ThemedButton from './Component/ThemedButton';
+import Toolbar from './Component/ToolBar';
+import { PokemonProvider } from './Context/PokemonContext';
+import { ThemeProvider } from './Context/ThemeContext';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       
+      {/* <ThemeProvider> */}
+        <PokemonProvider>
+          <PokemonList/>
+          {/* <PokemonTable/> */}
+        {/* <ThemedButton /> */}
+        </PokemonProvider> 
+      {/* </ThemeProvider> */}
     </div>
   );
 }
